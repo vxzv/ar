@@ -24,16 +24,7 @@
  
             <!-- マーカーを登録 -->
             <a-marker  type="pattern" url="pattern-qrcode_vxzv.github.io.patt">
-                <a-entity>
-                    <!-- 玉昌会ロゴ -->
-                    <a-gltf-model 
-                        src="#logo"
-                        scale="0.5 0.5 0.5"
-                        position="0 0.5 0"
-                        rotation="-80 -90 90"
-                        animation-mixer>
-                    </a-gltf-model>
-                </a-entity>
+                <a-entity gltf-model="#logo" animation-mixer></a-entity>
             </a-marker>
          
             <!-- AR用のカメラを置く -->
