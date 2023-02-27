@@ -14,11 +14,21 @@
 <body style="margin : 0px; overflow: hidden;">
     <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIを非表示） -->
     <a-scene embedded arjs="debugUIEnabled:false;">
+
+        <a-assets>
+            <a-asset-item id="logo" src="logo.glb">
+          </a-assets>        
  
             <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
             <a-marker preset="hiro">
-              <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
-              <a-box position="0 0.5 0" wireframe="true"></a-box>
+                <a-entity>
+                    <!-- Astronaut -->
+                    <a-obj-model 
+                        src="#logo"
+                        scale="0.5 0.5 0.5"
+                        position="0 0.5 0"
+                        rotation="-80 -90 90">
+                    </a-obj-model>
             </a-marker>
          
             <!-- AR用のカメラを置く -->
