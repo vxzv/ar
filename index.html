@@ -16,19 +16,20 @@
     <a-scene embedded arjs="debugUIEnabled:false;">
 
         <a-assets>
+            <!--玉昌会ロゴ-->
             <a-asset-item id="logo" src="logo.glb">
           </a-assets>        
  
             <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
             <a-marker preset="hiro">
                 <a-entity>
-                    <!-- Astronaut -->
-                    <a-glb-model 
+                    <!-- 玉昌会ロゴ -->
+                    <a-gltf-model 
                         src="#logo"
                         scale="0.5 0.5 0.5"
                         position="0 0.5 0"
                         rotation="-80 -90 90">
-                    </a-glb-model>
+                    </a-gltf-model>
             </a-marker>
          
             <!-- AR用のカメラを置く -->
