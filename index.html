@@ -21,12 +21,13 @@
         <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIを非表示） -->
     <a-scene embedded arjs="debugUIEnabled:false;">
             <!-- AR用のカメラを置く -->
-            <a-entity camera></a-entity>
+            <a-entity camera><a-cursor></a-cursor></a-entity>
         <a-assets>
             <!--玉昌会ロゴ-->
             <a-asset-item id="logo" src="logo.gltf"></a-asset-item>
             <video id="video" src="logo.mp4" autoplay muted webkit-playsinline playsinline loop="true"></video>
         </a-assets>  
+        
 
         <!-- マーカーを登録 -->
                 <!-- x y zの順 x横 y縦 z奥行 -->
@@ -37,11 +38,55 @@
             <a-cylinder position="-0.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="#FFC65D"></a-cylinder>
             <a-cylinder position="0.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="#FFC65D"></a-cylinder>
             <a-video src="#video" position="0 1 1" rotation="0 0 0" width="4" height="2.25"></a-video>
-    
+            <!-- 再生/停止用のボタン -->
+<a-entity
+    id="playButton"
+    geometry="primitive: plane; height: 1; width: 1"
+    material="src: #play"
+    position="-7.3 -1.2 0.6"
+    rotation="0 90 0"
+    ></a-entity>
+
+    <a-entity
+    id="stopButton"
+    click-stop
+    geometry="primitive: plane; height: 1; width: 1"
+    material="src: #stop"
+    position="-7.3 -1.2 -0.67"
+    rotation="0 90 0"
+    ></a-entity>
         </a-marker>
 
 
 
     </a-scene>
+    <script>document.addEventListener("DOMContentLoaded", function(event) {
+        var scene = document.querySelector("a-scene");
+        var video = document.getElementById("video");
+    
+        if (scene.hasLoaded) {
+          run();
+        } else {
+          scene.addEventListener("loaded", run);
+        }
+    
+        function run () {
+          scene.querySelector("#playButton").addEventListener("click", function(e){
+                video.play();
+            });
+        }
+    
+      })
+    
+      AFRAME.registerComponent('click-stop', {
+      init: function () {
+        this.el.addEventListener('click', function (event) {
+          document.getElementById("video").pause();
+        });
+      }
+    });
+    
+    
+    </script>
 </body> 
 </html>
