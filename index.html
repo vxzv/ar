@@ -14,30 +14,10 @@
 
 </head>
 
-<style>
-    .arjs-loader {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.8);
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .arjs-loader div {
-      text-align: center;
-      font-size: 1.25em;
-      color: white;
-    }
-  </style>
+
 
 <body style="margin : 0px; overflow: hidden;">
-    <div class="arjs-loader">
-        <div>Loading, please wait...</div>
-    </div>
+
     <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIを非表示） -->
 <a-scene embedded arjs="debugUIEnabled:false;">
         <!-- AR用のカメラを置く -->
@@ -52,12 +32,12 @@
             <!-- x y zの順 x横 y縦 z奥行 -->
     <a-marker  type="pattern" url="pattern-qrcode_vxzv.github.io.patt">
 
- <a-entity  position="-1 0 -3" rotation="0 0 0" scale="1 1 1" gltf-model="#logo" animation-mixer></a-entity> 
+        <a-entity  position="-1 -1 -3" rotation="-30 0 0" scale="1 1 1" gltf-model="#logo" animation-mixer></a-entity> 
 
-      <a-cylinder position="-2.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="#4CC3D9"></a-cylinder>
-      <a-cylinder position="-1.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="#EF2D5E"></a-cylinder>
-      <a-cylinder position="-0.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="#FFC65D"></a-cylinder>
-      <a-cylinder position="0.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="#FFC65D"></a-cylinder>
+        <a-cylinder position="-2.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="#4CC3D9"></a-cylinder>
+        <a-cylinder position="-1.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="#EF2D5E"></a-cylinder>
+        <a-cylinder position="-0.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="#FFC65D"></a-cylinder>
+        <a-cylinder position="0.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="#FFC65D"></a-cylinder>
    
     </a-marker>
 
