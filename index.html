@@ -16,21 +16,27 @@
 <body style="margin : 0px; overflow: hidden;">
     <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIを非表示） -->
     <a-scene embedded arjs="debugUIEnabled:false;">
+<a-scene>
+    <a-assets>
+        <!--玉昌会ロゴ-->
+        <a-asset-item id="logo" src="logo.gltf"></a-asset-item>
+    </a-assets>  
 
-        <a-assets>
-            <!--玉昌会ロゴ-->
-            <a-asset-item id="logo" src="logo.gltf">
-          </a-assets>        
- 
-            <!-- マーカーを登録 -->
+     <!-- マーカーを登録 -->
             <!-- x y zの順 x横 y縦 z奥行 -->
             <a-marker  type="pattern" url="pattern-qrcode_vxzv.github.io.patt">
-                <a-entity position="0 0 0" rotation="-30 0 0" scale="0.7 0.7 0.7" gltf-model="#logo" animation-mixer ></a-entity>
-            </a-marker>
-         
-            <!-- AR用のカメラを置く -->
-            <a-entity camera></a-entity>
-         
-    </a-scene>
-</body>
+
+      <a-entity  position="0 3 -3" rotation="0 0 0" scale="1 1 1" gltf-model="#logo" animation-mixer></a-entity>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="9.1" height="5.5" color="gray"></a-plane>
+      <a-cylinder position="-2.1 0.75 -2.5" radius="0.5"rotation="90 0 0" height="0.3" color="#4CC3D9"></a-cylinder>
+      <a-cylinder position="-0.7 0.75 -2.5" radius="0.5"rotation="90 0 0" height="0.3" color="#EF2D5E"></a-cylinder>
+      <a-cylinder position="0.7 0.75 -2.5" radius="0.5"rotation="90 0 0" height="0.3" color="#FFC65D"></a-cylinder>
+      <a-cylinder position="2.1 0.75 -2.5" radius="0.5"rotation="90 0 0" height="0.3" color="#FFC65D"></a-cylinder>
+    </a-marker>
+
+    <!-- AR用のカメラを置く -->
+    <a-entity camera></a-entity>
+    
+</a-scene>
+</body> 
 </html>
