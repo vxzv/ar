@@ -17,14 +17,12 @@
 
         <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIを非表示） -->
     <a-scene embedded arjs="debugUIEnabled:false;">
-
-
             
         <a-assets>
             <!--玉昌会ロゴ-->
             <a-asset-item id="logo" src="logo.gltf"></a-asset-item>
             <a-asset-item id="twitter" src="twitter.gltf"></a-asset-item>
-            <video id="video" src="logo.mp4" muted webkit-playsinline playsinline loop="true"></video>
+            <video id="video" autoplay loop="true" muted="true" src="logo.mp4"></video>
         </a-assets>  
         
 
@@ -32,61 +30,24 @@
                 <!-- x y zの順 x横 y縦 z奥行 -->
         <a-marker  type="pattern" url="pattern-qrcode_vxzv.github.io.patt">
             <a-entity  position="0 0 0" rotation="-45 0 0" scale="0.5 0.5 0.5" gltf-model="#logo" animation-mixer></a-entity> 
-            <a-entity  position="-2.5 -1 1" rotation="-20 180 0" scale="0.3 0.3 0.3" gltf-model="#twitter" ></a-entity> 
+            <a-entity  position="2 -1 0" rotation="-20 180 0" scale="0.3 0.3 0.3" gltf-model="#twitter" ></a-entity> 
             <a-cylinder position="-1.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="blue"></a-cylinder>
             <a-cylinder position="-0.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="blue"></a-cylinder>
             <a-cylinder position="0.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="blue"></a-cylinder>
-            <a-video src="#video" position="-1 1 -1.5" rotation="-20 0 0" width="4" height="2.25"></a-video>
+            <a-video src="#video" position="-1 1 -1.5" rotation="-20 0 0" width="4" height="2.25"play="true"></a-video>
             <!-- 再生/停止用のボタン -->
-            <a-entity
-            id="playButton"
-            geometry="primitive: plane; height: 1; width: 1"
-            material="src: #play"
-            position="0 0 0"
-            rotation="0 20 0"
-            ></a-entity>
-        
-            <a-entity
-            id="stopButton"
-            click-stop
-            geometry="primitive: plane; height: 1; width: 1"
-            material="src: #stop"
-            position="1 1 1"
-            rotation="0 0 0"
-            ></a-entity>
+
         </a-marker>
     <!-- AR用のカメラ配置 -->
     <a-entity camera></a-entity>
 
     </a-scene>
 
-    <script>document.addEventListener("DOMContentLoaded", function(event) {
-        var scene = document.querySelector("a-scene");
-        var video = document.getElementById("video");
-    
-        if (scene.hasLoaded) {
-          run();
-        } else {
-          scene.addEventListener("loaded", run);
-        }
-    
-        function run () {
-          scene.querySelector("#playButton").addEventListener("click", function(e){
-                video.play();
-            });
-        }
-    
-      })
-    
-      AFRAME.registerComponent('click-stop', {
-      init: function () {
-        this.el.addEventListener('click', function (event) {
-          document.getElementById("video").pause();
-        });
-      }
-    });
-
-    
+    <script>
+         window.addEventListener('click', function () {
+      var v = document.querySelector('#video');
+      v.play();
+      });
     </script>
 </body> 
 </html>
