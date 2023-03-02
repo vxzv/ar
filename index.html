@@ -30,12 +30,10 @@
 
         <!-- マーカーを登録 -->
                 <!-- x y zの順 x横 y縦 z奥行 -->
-    <a-camera>
-        <a-entity cursor="rayOrigin: mouse"></a-entity>
-    </a-camera>
+
         <a-marker  type="pattern" url="pattern-qrcode_vxzv.github.io.patt">
             <a-entity  position="0 0 0" rotation="-45 0 0" scale="0.5 0.5 0.5" gltf-model="#logo" animation-mixer></a-entity> 
-            <a-entity  position="-2.5 -1 1" rotation="0 180 0" scale="0.3 0.3 0.3" gltf-model="#twitter" link="href: https://twitter.com;"></a-entity> 
+            <a-entity  position="-2.5 -1 1" rotation="0 180 0" scale="0.3 0.3 0.3" gltf-model="#twitter"></a-entity> 
             <a-entity  position="-1.5 -1 1" rotation="0 180 0" scale="0.3 0.3 0.3" gltf-model="#Instagram"></a-entity>
             <a-cylinder position="-0.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="blue"></a-cylinder>
             <a-cylinder position="0.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="blue"></a-cylinder>
@@ -55,5 +53,11 @@
       v.play();
       });
     </script>
+            <script>
+        window.addEventListener('click', function () {
+        var g = document.querySelector('#twitter');
+        g.location.href = 'https://www.sejuku.net/blog/';
+        });
+      </script>
 </body> 
 </html>
