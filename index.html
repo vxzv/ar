@@ -57,7 +57,7 @@
     <script>
   AFRAME.registerComponent("mylink", {
     init: function() {
-      this.el.addEventListener("click", (e) => {
+      this.el.addEventListener("mouseup", (e) => {
         window.location = this.data.href;
       })
     }
