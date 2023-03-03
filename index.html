@@ -25,7 +25,6 @@
             <a-asset-item id="twitter" src="twitter.gltf"></a-asset-item>
             <a-asset-item id="Instagram" src="Instagram.gltf"></a-asset-item>
             <video id="video" autoplay loop="true" muted="true" src="logo.mp4"></video>
-            <img id="img_twitter" src="img_twitter.png">
 
         </a-assets>  
       
@@ -50,15 +49,7 @@
             <a-cylinder position="0.5 -1 1" radius="0.3"rotation="0 0 0" height="0.3" color="blue"link="href: https://schatzkin.com;"></a-cylinder>
             <a-video src="#video" position="-1 1 -1.5" rotation="-20 0 0" width="4" height="2.25"play="true"></a-video>
             <a-text position="1 0 -0.5" rotation="-90 0 0"value="Hello, World!\n作成中" color="black"></a-text>
-            <a-entity
-    id="Twitter"
-    click-change
-    geometry="primitive: plane; height:1; width:1;"
-                      position="1 0 1"
-    material="src=#img_twitter"
-    raycaster="objects: .clickable"
-    >
-</a-entity>
+            
     
 
         </a-marker>
@@ -83,13 +74,6 @@
     }
   })
 </script> 
-        <script>AFRAME.registerComponent('click-change', {
-  init: function () {
-    this.el.addEventListener('click', function (event) {
-    window.location.href ="https://kabos.hatenablog.jp/entry/2020/11/06/160819" ;
-    });
-  }
-});
-        </script>
+
 </body> 
 </html>
