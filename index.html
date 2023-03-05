@@ -19,45 +19,11 @@
     <a-scene embedded arjs="debugUIEnabled:false;"renderer="logarithmicDepthBuffer: true;">
 
         
-        <!-- カーソルを追加 -->
+                <!-- カーソルを追加 -->
         <a-camera>
-            <a-cursor fuse="true" color="white" scale="2 2">
-                <a-animation 
-                     begin="mouseenter" 
-                     easing="ease-out" 
-                     attribute="scale" 
-                     fill="forwards" 
-                     from="2 2 2" 
-                     to="1 1 1" 
-                     dur="300">
-                </a-animation>
-                <a-animation 
-                     begin="mouseenter"
-                     attribute="color" 
-                     fill="forwards" 
-                     from="white" 
-                     to="red" 
-                     dur="0">
-                </a-animation>
-                <a-animation 
-                     begin="mouseleave" 
-                     easing="ease-in" 
-                     attribute="scale" 
-                     fill="forwards" 
-                     from="1 1 1" 
-                     to="2 2 2" 
-                     dur="300">
-                </a-animation>
-                <a-animation 
-                     begin="mouseleave" 
-                     attribute="color" 
-                     fill="forwards" 
-                     from="red" 
-                     to="black" 
-                     dur="0">
-                </a-animation>
+            <a-cursor color="#fff" fuse="true">
             </a-cursor>
-    </a-camera>
+        </a-camera>
             
         <a-assets>
             <!--玉昌会ロゴ-->
