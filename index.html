@@ -19,11 +19,7 @@
     <a-scene embedded arjs="debugUIEnabled:false;"renderer="logarithmicDepthBuffer: true;">
 
         
-                <!-- カーソルを追加 -->
-        <a-camera>
-            <a-cursor color="#fff" fuse="true">
-            </a-cursor>
-        </a-camera>
+
             
         <a-assets>
             <!--玉昌会ロゴ-->
@@ -52,9 +48,11 @@
         </a-marker>
             
     <!-- AR用のカメラ配置 -->
-    <a-entity camera></a-entity>
-
-    </a-scene>
+<a-entity camera
+  cursor-visible="true"
+  cursor-scale="2"
+  cursor-color="#ff0000"
+  cursor-opacity="0.5"></a-entity>
 
 
     
